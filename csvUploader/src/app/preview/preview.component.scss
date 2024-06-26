@@ -65,6 +65,7 @@
 
     &-body {
       height: 350px;
+      overflow-y: auto;
       box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
       .row {
         &:nth-child(even) {
