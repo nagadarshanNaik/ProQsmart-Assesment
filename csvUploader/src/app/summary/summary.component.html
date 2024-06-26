@@ -1,0 +1,37 @@
+<div class="summary-container">
+  <div class="body">
+    <div class="success-icon">
+      <img src="/assets/success_image.png" alt="" />
+    </div>
+    <h2>Data imported successfully</h2>
+    <a href="" class="import-summary"> Import Summary </a>
+    <div class="summary-details">
+      <div class="details-heading">
+        <h3>Employee Details</h3>
+      </div>
+      <div class="summary-record">
+        <h4>Employee Details</h4>
+        <div class="success">
+          <span>Success:</span>
+          <span>{{ correctRows }}</span>
+        </div>
+      </div>
+      <div class="summary-record">
+        <div class="total-records">
+          <span>Total No. of Records:</span>
+          <span>{{ totalRows }}</span>
+        </div>
+        <div class="failure">
+          <span>Failure:</span>
+          <span>{{ incorrectRows }}</span>
+        </div>
+      </div>
+    </div>
+    <button class="report-button">Access the report</button>
+    <div>
+      <button (click)="goToUpload()" class="report-button mt-20">
+        Upload more
+      </button>
+    </div>
+  </div>
+</div>

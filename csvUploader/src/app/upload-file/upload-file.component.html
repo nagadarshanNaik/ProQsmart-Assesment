@@ -1,0 +1,39 @@
+<div class="upload-container">
+  <div class="upload-header">
+    <h2>Upload CSV</h2>
+    <button class="close-button">&times;</button>
+  </div>
+  <div class="upload-body">
+    <div class="upload-box">
+      <input hidden type="file" #uploadFile (change)="onFileChange($event)" />
+      <label
+        *ngIf="!csvFile"
+        (click)="onUploadClick()"
+        for="file-upload"
+        class="upload-label"
+      >
+        <div class="upload-img">
+          <img src="/assets/upload_img.png" alt="" />
+        </div>
+        <div class="text1">Select a CSV file to upload</div>
+        <div class="text2">or drag and drop it here</div>
+      </label>
+      <div *ngIf="csvFile" class="file-selected-main">
+        <div class="file-selected-body d-flex">
+          <p class="text">File Selected</p>
+          <button (click)="onRemovefile()" class="close-button">&times;</button>
+        </div>
+        <div class="file-name">
+          {{ csvFile.name }}
+        </div>
+      </div>
+    </div>
+    <div *ngIf="fileError" class="error">{{ fileError }}</div>
+
+    <div class="upload-button">
+      <button [disabled]="!csvFile" (click)="onUpload()" class="button">
+        Upload
+      </button>
+    </div>
+  </div>
+</div>

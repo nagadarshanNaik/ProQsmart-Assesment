@@ -1,0 +1,65 @@
+<div class="preview-main">
+  <div class="preview-header">My User</div>
+  <div class="table">
+    <div class="table-header">
+      <ul class="d-flex align-center">
+        <li>Name</li>
+        <li>Email</li>
+        <li>Phone number</li>
+        <li>City</li>
+        <li>Address</li>
+        <li>GPA</li>
+      </ul>
+    </div>
+    <div class="table-body">
+      <div class="row" *ngFor="let row of data; let i = index">
+        <ul class="d-flex">
+          <li [ngClass]="{ error_border: row.errors.name }">
+            <p>{{ row.name }}</p>
+            <div *ngIf="row?.errors?.name" class="error-message">
+              {{ row?.errors?.name }}
+            </div>
+          </li>
+
+          <li [ngClass]="{ error_border: row.errors.email }">
+            <p>{{ row.email }}</p>
+            <div *ngIf="row?.errors?.email" class="error-message">
+              {{ row?.errors?.email }}
+            </div>
+          </li>
+
+          <li [ngClass]="{ error_border: row.errors.phoneNumber }">
+            <p>{{ row.phoneNumber }}</p>
+            <div *ngIf="row?.errors?.phoneNumber" class="error-message">
+              {{ row?.errors?.phoneNumber }}
+            </div>
+          </li>
+
+          <li [ngClass]="{ error_border: row.errors.city }">
+            <p>{{ row.city }}</p>
+            <div *ngIf="row?.errors?.city" class="error-message">
+              {{ row?.errors?.city }}
+            </div>
+          </li>
+
+          <li [ngClass]="{ error_border: row.errors.address }">
+            <p>{{ row.address }}</p>
+            <div *ngIf="row?.errors?.address" class="error-message">
+              {{ row?.errors?.address }}
+            </div>
+          </li>
+
+          <li [ngClass]="{ error_border: row.errors.gpa }">
+            <p>{{ row.gpa }}</p>
+            <div *ngIf="row?.errors?.gpa" class="error-message">
+              {{ row?.errors?.gpa }}
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="continue-button">
+    <button (click)="onContinue()" class="button">Continue</button>
+  </div>
+</div>
